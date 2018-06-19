@@ -2,6 +2,11 @@
   background-color: rgb(255, 115, 0);
   padding: 5px;
   border: 2px solid black;
+  position: sticky;
+  top: 0;
+}
+#navigation-user{
+  float: right;
 }
 #navigation{
   text-align: left;
@@ -10,7 +15,7 @@
   -webkit-padding-start: 5px;
 }
 #navigation li{
-  display: inline-block;
+  display: inline;
 }
 #navigation a{
   padding: 5px;
@@ -27,7 +32,11 @@
   background-color: rgb(255, 255, 0);
   text-decoration-color: black;
 }
+/* Media decorators */
 @media screen and (max-width: 600px){
+  #navigation-user{
+    float: none;
+  }
   #navigation li{
     display: block;
     margin-bottom: 5px;
