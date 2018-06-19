@@ -1,0 +1,24 @@
+.main_navigation{
+  background-color: rgb(255, 115, 0);
+  padding: 5px;
+  border: 2px solid black;
+}
+#navigation{
+  text-align: left;
+  list-style-type: none;
+  margin-left: 0px;
+  -webkit-padding-start: 5px;
+}
+#navigation li{
+  display: inline-block;
+}
+#navigation a{
+  padding: 5px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 14px;
+  border: 1px solid black;
+  border-radius: 3px;
+  background-color: rgb(255, 196, 86);
+  margin-right: 5px;
+}
