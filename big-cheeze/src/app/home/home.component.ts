@@ -6,12 +6,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  title = 'welcome ' + name + ' to big cheeze restaurant';
-  public name = 'Cheeze';
+  public title = 'welcome to big cheeze restaurant';
+  public name: string;
+  public surname: string;
+  public fullname: string;
 
   constructor() { }
 
   ngOnInit() {
+  }
+  greet() {
+    this.name = prompt('Name', '');
+    this.surname = prompt('Surname', '');
+    this.fullname = this.name + ' ' + this.surname;
+    if (this.fullname != null) {
+      this.title = 'welcome ' + this.fullname + ' to big cheeze restaurant';
+    }
   }
 
 }
