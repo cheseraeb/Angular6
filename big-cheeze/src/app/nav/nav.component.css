@@ -22,3 +22,26 @@
   background-color: rgb(255, 196, 86);
   margin-right: 5px;
 }
+#navigation a:hover{
+  text-decoration-line: underline;
+  background-color: rgb(255, 255, 0);
+  text-decoration-color: black;
+}
+@media screen and (max-width: 600px){
+  #navigation li{
+    display: block;
+    margin-bottom: 5px;
+  }
+  #navigation a{
+    text-align: center;
+    font-size: 100%;
+    overflow: hidden;
+    margin: 0;
+    height: fit-content;
+    padding: 10px;
+    border-bottom: 1px solid black;
+    display: block;
+    margin: 0;
+
+  }
+}
