@@ -10,12 +10,18 @@ export class HomeComponent implements OnInit {
   public name: string;
   public surname: string;
   public fullname: string;
+  public username = '' ;
+  public password = '' ;
+  public showPassword: boolean;
+  public color = '';
+  public colors = ['green', 'blue', 'yellow', 'purple'];
 
   constructor() { }
 
   ngOnInit() {
   }
-  greet() {
+  greet(event) {
+    console.log(event);
     this.name = prompt('Name', '');
     this.surname = prompt('Surname', '');
     this.fullname = this.name + ' ' + this.surname;
@@ -23,5 +29,13 @@ export class HomeComponent implements OnInit {
       this.title = 'welcome ' + this.fullname + ' to big cheeze restaurant';
     }
   }
-
+  logDetails(value) {
+    console.log(value);
+  }
+  showPwd(value) {
+    this.showPassword = value;
+  }
+  assignColor(colorvalue) {
+    this.color = colorvalue;
+  }
 }
