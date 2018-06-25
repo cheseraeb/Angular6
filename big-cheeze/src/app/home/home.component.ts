@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -15,10 +15,20 @@ export class HomeComponent implements OnInit {
   public showPassword: boolean;
   public color = '';
   public colors = ['green', 'blue', 'yellow', 'purple'];
+  public greetme: string;
+  // Input fram parent
+  // @Input('parentData') public Cheezename;
+  @Input() public parentData;
+  // For output you need Eventemitters
+  @Output() public childEvent = new EventEmitter();
 
   constructor() { }
 
   ngOnInit() {
+    this.greetme = 'Hello ' + this.parentData;
+  }
+  fireEvent() {
+    this.childEvent.emit('Heya Chheeeeeeezzzzzee');
   }
   greet(event) {
     console.log(event);

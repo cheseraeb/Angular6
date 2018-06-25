@@ -5,9 +5,15 @@
   </div>
   <app-nav></app-nav>
   <!-- Component interaction -->
-  <!-- from parent to child (app to home)-->
-  <app-home></app-home>
+  <!-- from parent to child (app to home) [parentdata]-->
+  <!-- from child to parent (home to app) [childEvent]-->
+  <!-- For now the Home component will be removed, and replaced with log-in component -->
+  <!-- <app-home (childEvent)="call(message=$event)" [parentData]="greetname"></app-home> -->
+  <!--  -->
+  <app-log-in></app-log-in>
   <footer id="footer_banner">
-    <img src="assets/Multicheese.jpg" alt="" srcset="">
+    <h2 id="datetime"></h2>
+    <!-- <h2>{{date}}</h2> -->
+    <img src="assets/Multicheese.jpg" alt="MultiCheeze">
   </footer>
 </div>
