@@ -1,0 +1,6 @@
+<h2>Employee Detail List</h2>
+<ul>
+  <li *ngFor="let employee of employees">
+    {{employee.id}}. {{employee.first_name}} {{employee.last_name}} - {{employee.email}} - {{employee.gender}}
+  </li>
+</ul>
