@@ -1,0 +1,23 @@
+button{
+  padding: 5px;
+  text-decoration: none;
+  color: black;
+  text-transform: uppercase;
+  font-size: 14px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: rgb(255, 196, 86);
+  margin-right: 5px;
+  /* margin-bottom: 20px; */
+  cursor: pointer;
+  position: sticky;
+  bottom: 0;
+  display: inline-block;
+  margin-left: 5px;
+}
+button:hover{
+  background-color: rgb(236, 255, 67);
+}
+button:active{
+  background-color: orangered;
+}

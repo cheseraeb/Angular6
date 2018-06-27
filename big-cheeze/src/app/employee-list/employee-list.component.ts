@@ -17,10 +17,10 @@ export class EmployeeListComponent implements OnInit {
               private router: Router) {}
 
   ngOnInit() {
-    this._employeeservice.getEmployees().subscribe(data => this.employees = data,
-                                                  error => this.errorMsg = error);
+    this._employeeservice.getEmployees().subscribe((data) => this.employees = data);
+                                                  // error => this.errorMsg = error);
   }
-  onSelect(employee){
+  onSelect(employee) {
     this.router.navigate(['/employeeDetail', employee.id]);
   }
 
