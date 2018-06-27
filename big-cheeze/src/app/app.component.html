@@ -3,25 +3,27 @@
   <div style="text-align:center">
     <img src="/assets/big_cheese_banner_logo.png" alt="Big Cheeze logo">
   </div>
-  <nav class="main_navigation">
+  <app-nav></app-nav>
+
+  <!-- <nav class="main_navigation">
     <ul id="navigation">
         <li>
-            <a routeLink="/home" routeLinkActive="active">home</a>
+          <a [routerLink]="['/']">Home</a>
         </li>
         <li>
-            <a routeLink="/employeelist" routeLinkActive="active">Employee list</a>
+          <a [routerLink]="['/employeelist']">Employee list</a>
         </li>
         <li>
-            <a routeLink="/employeedetails" routeLinkActive="active">Employee details</a>
+          <a [routerLink]="['/employeedetails']">Employee details</a>
         </li>
         <li id="navigation-user">
-            <a routeLink="/signup" routeLinkActive="active">Sign up</a>
+          <a [routerLink]="['/signup']">Sign up</a>
         </li>
         <li id="navigation-user">
-            <a routeLink="/login" routeLinkActive="active">Log in</a>
+          <a [routerLink]="['/login']">Log in</a>
         </li>
     </ul>
-  </nav>
+  </nav> -->
   <router-outlet></router-outlet>
   <!-- Component interaction -->
   <!-- from parent to child (app to home) [parentdata]-->
@@ -33,9 +35,9 @@
   <app-employee-list></app-employee-list> -->
   <!-- <router-outlet></router-outlet> -->
 
-  <!-- <footer id="footer_banner">
-    <h2 id="datetime"></h2> -->
-    <!-- <h2>{{date}}</h2> -->
-    <!-- <img src="assets/Multicheese.jpg" alt="MultiCheeze">
-  </footer> -->
+  <footer id="footer_banner">
+    <h2 id="datetime"></h2>
+    <h2>{{date}}</h2>
+    <img src="assets/Multicheese.jpg" alt="MultiCheeze">
+  </footer>
 </div>

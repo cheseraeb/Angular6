@@ -9,7 +9,7 @@ export class AppComponent {
   public greetname = 'Cheeze101';
   // below variable will recieve event properties from home
   public message: string;
-  // public DateTime = setInterval(this.showDate, 1000);
+  public DateTime = setInterval(this.showDate, 1000);
   public dateid;
   public date;
 

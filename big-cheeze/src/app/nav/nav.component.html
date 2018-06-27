@@ -1,19 +1,25 @@
 <nav class="main_navigation">
-  <ul id="navigation">
-      <li>
-          <a routeLink="/home" routeLinkActive="active">home</a>
-      </li>
-      <li>
-          <a routeLink="/employeelist" routeLinkActive="active">Employee list</a>
-      </li>
-      <li>
-          <a routeLink="/employeedetails" routeLinkActive="active">Employee details</a>
-      </li>
-      <li id="navigation-user">
-          <a routeLink="/signup" routeLinkActive="active">Sign up</a>
-      </li>
-      <li id="navigation-user">
-          <a routeLink="/login" routeLinkActive="active">Log in</a>
-      </li>
-  </ul>
-</nav>
+    <ul id="navigation">
+        <li>
+          <a [routerLink]="['/']">Home</a>
+        </li>
+        <li>
+          <a [routerLink]="['/employeelist']">Employee list</a>
+            <!-- <a routeLink="/employeelist" routeLinkActive="active">Employee list</a> -->
+        </li>
+        <li>
+          <a [routerLink]="['/employeedetails']">Employee details</a>
+
+            <!-- <a routeLink="/employeedetails" routeLinkActive="active">Employee details</a> -->
+        </li>
+        <li id="navigation-user">
+          <a [routerLink]="['/signup']">Sign up</a>
+            <!-- <a routeLink="/signup" routeLinkActive="active">Sign up</a> -->
+        </li>
+        <li id="navigation-user">
+          <a [routerLink]="['/login']">Log in</a>
+
+            <!-- <a routeLink="/login" routeLinkActive="active">Log in</a> -->
+        </li>
+    </ul>
+  </nav>
