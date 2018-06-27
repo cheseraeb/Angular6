@@ -1,7 +1,8 @@
 <h2>Employee List</h2>
 <h3>{{errorMsg}}</h3>
-<ul>
-  <li *ngFor="let employee of employees">
+<ul class="EmpList">
+  <li (click)="onSelect(employee)" *ngFor="let employee of employees">
+    <span class="Emp">{{employee.id}}</span>
     {{employee.first_name}}
   </li>
 </ul>

@@ -1,4 +1,4 @@
-
+import { EmployeeDetailComponent } from './employee-detail/employee-detail.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -10,8 +10,11 @@ import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
+  // { path: '', redirectTo: '/home', pathMatch: 'full'},
+  // { path: 'home', component: HomeComponent},
   { path: 'employeelist', component: EmployeeListComponent},
   { path: 'employeedetails', component: EmployeeDetailsComponent},
+  { path: 'employeeDetail/:id', component: EmployeeDetailComponent},
   { path: 'login', component: LogInComponent},
   { path: 'signup', component: SignupComponent},
   // Wildcard always at bottom
@@ -24,4 +27,5 @@ const routes: Routes = [
 })
 export class AppRoutingModule {}
 export const routingComponents = [HomeComponent, EmployeeListComponent, EmployeeDetailsComponent, LogInComponent, SignupComponent,
+                                  EmployeeDetailComponent,
                                  PageNotFoundComponent];

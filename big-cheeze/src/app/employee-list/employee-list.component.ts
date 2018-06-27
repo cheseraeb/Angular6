@@ -3,6 +3,7 @@ import {
   Component,
   OnInit
 } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-employee-list',
@@ -12,11 +13,15 @@ import {
 export class EmployeeListComponent implements OnInit {
   employees = [];
   errorMsg;
-  constructor(private _employeeservice: EmployeeService) {}
+  constructor(private _employeeservice: EmployeeService,
+              private router: Router) {}
 
   ngOnInit() {
     this._employeeservice.getEmployees().subscribe(data => this.employees = data,
                                                   error => this.errorMsg = error);
+  }
+  onSelect(employee){
+    this.router.navigate(['/employeeDetail', employee.id]);
   }
 
 }
