@@ -20,6 +20,7 @@
 #navigation a{
   padding: 5px;
   text-decoration: none;
+  color: black;
   text-transform: uppercase;
   font-size: 14px;
   border: 1px solid black;
