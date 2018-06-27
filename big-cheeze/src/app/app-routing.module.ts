@@ -1,3 +1,4 @@
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LogInComponent } from './log-in/log-in.component';
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'employeedetails', component: EmployeeDetailsComponent},
   { path: 'login', component: LogInComponent},
   { path: 'signup', component: SignupComponent},
+  { path: '**', component: PageNotFoundComponent},
 ];
 
 @NgModule({
@@ -24,4 +26,5 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule {}
-export const routingComponents = [HomeComponent, EmployeeListComponent, EmployeeDetailsComponent, LogInComponent, SignupComponent];
+export const routingComponents = [HomeComponent, EmployeeListComponent, EmployeeDetailsComponent, LogInComponent, SignupComponent,
+                                 PageNotFoundComponent];

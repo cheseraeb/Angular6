@@ -18,7 +18,7 @@ export class AppComponent {
   }
   showDate() {
     this.dateid = document.getElementById('datetime');
-    this.date = new Date();
-    this.dateid.innerHTML = this.date;
+    // this.date = new Date();
+    this.dateid.innerHTML = new Date();
   }
 }
