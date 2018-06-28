@@ -1,6 +1,11 @@
 <h1>Employee detail</h1>
-<h3>you have selected id {{clientID}}</h3>
-<p>{{employee}}</p>
-
+<ul>
+  <li>Employee ID : {{employee.employee_id}}</li>
+  <li>First Name : {{employee.first_name}}</li>
+  <li>Last Name : {{employee.last_name}}</li>
+  <li>Email Adress : {{employee.email}}</li>
+  <li>Gender : {{employee.gender}}</li>
+</ul>
 <button (click)="goPrevious()">Previous</button>
-<button (click)="goNext()">Next</button>
+<button (click)="goNext()">Next</button> <br>
+<button (click)="gotoEmployeelist()">Back</button>

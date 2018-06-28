@@ -3,7 +3,7 @@ import {
   Component,
   OnInit
 } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-employee-list',
@@ -13,15 +13,23 @@ import { Router } from '@angular/router';
 export class EmployeeListComponent implements OnInit {
   employees = [];
   errorMsg;
+  selectedID;
   constructor(private _employeeservice: EmployeeService,
-              private router: Router) {}
+              private router: Router,
+              private route: ActivatedRoute) {}
 
   ngOnInit() {
-    this._employeeservice.getEmployees().subscribe((data) => this.employees = data);
-                                                  // error => this.errorMsg = error);
+    this._employeeservice.getEmployees().subscribe((data) => this.employees = data,
+                                                  error => this.errorMsg = error);
+    this.route.paramMap.subscribe((params: ParamMap) =>
+     // tslint:disable-next-line:radix
+    this.selectedID = parseInt(params.get('id')));
   }
   onSelect(employee) {
-    this.router.navigate(['/employeeDetail', employee.id]);
+    this.router.navigate(['/employeeDetail', employee.employee_id]);
+  }
+  isSelected(employee) {
+    return employee.employee_id === this.selectedID;
   }
 
 }

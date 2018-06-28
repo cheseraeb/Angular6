@@ -24,4 +24,7 @@
   padding: 3px;
   background-color: orangered;
 }
+.EmpList li.selected{
+  background-color: yellow;
+}
 
