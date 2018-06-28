@@ -7,11 +7,12 @@
   <li>Email Adress : {{employee.email}}</li>
 </ul>
 <div class="employeeInfo">
-    <button (click)="showContact()">Contact Information</button>
-    <button (click)="showPersonal()">personal Information</button>
+    <button (click)="showDetails('contact')">Contact Information</button>
+    <button (click)="showDetails('personal')">Personal Information</button>
+    <button (click)="showDetails('employment')">Employment Information</button>
 </div>
-<br>
 <router-outlet></router-outlet>
+<hr>
 <button (click)="goPrevious()">Previous</button>
 <button (click)="goNext()">Next</button> <br>
 <button (click)="gotoEmployeelist()">Back</button>

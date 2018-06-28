@@ -1,6 +1,3 @@
-// import { IEmployee } from '../employee';
-// import { Http } from '@angular/http';
-// import { Observable } from 'rxjs';
 import { EmployeeService } from './../employee.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, ParamMap } from '@angular/router';
@@ -17,8 +14,8 @@ export class EmployeeDetailComponent implements OnInit {
   initialId;
   public employees = [];
   public employee: any;
+  private buttonShow: boolean;
   errorMsg;
-  // public employee: any;
   constructor(private route: ActivatedRoute,
     private _employeeSrv: EmployeeService,
     private routerlink: Router) {
@@ -47,17 +44,20 @@ export class EmployeeDetailComponent implements OnInit {
     // );
     this.initialId = this.clientID;
     this.displayEmployeeDetails(this.initialId);
+    this.buttonShow = false;
   }
   goPrevious() {
     const previousid = this.clientID - 1;
     this.displayEmployeeDetails(previousid);
     this.routerlink.navigate(['/employeeDetail', previousid]);
     // this.routerlink.navigate([previousid], {relativeTo: this.route});
+    this.buttonShow = false;
   }
   goNext() {
     const nextid = this.clientID + 1;
     this.displayEmployeeDetails(nextid);
     this.routerlink.navigate(['/employeeDetail' , nextid]);
+    this.buttonShow = false;
   }
   gotoEmployeelist() {
     const selectedID = this.clientID ? this.clientID : null;
@@ -70,14 +70,15 @@ export class EmployeeDetailComponent implements OnInit {
         this.displayId = employeeID - 1;
         this.employees = response;
         this.employee = this.employees[this.displayId];
-        // console.log(this.employee);
       });
   }
-  showContact() {
-    this.routerlink.navigate(['contact'], {relativeTo: this.route});
+  showDetails(directory_route) {
+    if (!this.buttonShow) {
+      this.routerlink.navigate([directory_route, {id: this.clientID}], {relativeTo: this.route});
+      this.buttonShow = true;
+    } else {
+      this.routerlink.navigate(['../', this.clientID], {relativeTo: this.route});
+      this.buttonShow = false;
+    }
   }
-  showPersonal() {
-    this.routerlink.navigate(['personal'], {relativeTo: this.route});
-  }
-
 }

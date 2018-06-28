@@ -1,3 +1,4 @@
+import { EmployeeEmploymentDetailsComponent } from './employee-employment-details/employee-employment-details.component';
 import { EmployeePersonalComponent } from './employee-personal/employee-personal.component';
 import { EmployeeContactComponent } from './employee-contact/employee-contact.component';
 import { EmployeeDetailComponent } from './employee-detail/employee-detail.component';
@@ -18,13 +19,15 @@ const routes: Routes = [
   { path: 'employeelist', component: EmployeeListComponent },
   {
     path: 'employeedetails',
-    component: EmployeeDetailsComponent,
-    children: [
-      { path: 'contact', component: EmployeeContactComponent },
-      { path: 'personal', component: EmployeePersonalComponent }
-    ]
+    component: EmployeeDetailsComponent
   },
-  { path: 'employeeDetail/:id', component: EmployeeDetailComponent },
+  { path: 'employeeDetail/:id', component: EmployeeDetailComponent,
+  children: [
+    { path: 'contact', component: EmployeeContactComponent },
+    { path: 'personal', component: EmployeePersonalComponent },
+    { path: 'employment', component: EmployeeEmploymentDetailsComponent }
+  ]
+},
   { path: 'login', component: LogInComponent },
   { path: 'signup', component: SignupComponent },
   // Wildcard always at bottom
