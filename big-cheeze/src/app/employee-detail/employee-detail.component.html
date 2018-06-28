@@ -1,11 +1,17 @@
-<h1>Employee detail</h1>
+<h1>Employee Basic detail</h1>
 <ul>
-  <li>Employee ID : {{employee.employee_id}}</li>
+  <li>ID : {{employee.id}}</li>
+  <li>Title : {{employee.title}}</li>
   <li>First Name : {{employee.first_name}}</li>
   <li>Last Name : {{employee.last_name}}</li>
   <li>Email Adress : {{employee.email}}</li>
-  <li>Gender : {{employee.gender}}</li>
 </ul>
+<div class="employeeInfo">
+    <button (click)="showContact()">Contact Information</button>
+    <button (click)="showPersonal()">personal Information</button>
+</div>
+<br>
+<router-outlet></router-outlet>
 <button (click)="goPrevious()">Previous</button>
 <button (click)="goNext()">Next</button> <br>
 <button (click)="gotoEmployeelist()">Back</button>

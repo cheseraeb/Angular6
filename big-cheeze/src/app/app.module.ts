@@ -10,6 +10,8 @@ import { EmployeeService } from './employee.service';
 import { AppRoutingModule, routingComponents} from './app-routing.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { EmployeeDetailComponent } from './employee-detail/employee-detail.component';
+import { EmployeeContactComponent } from './employee-contact/employee-contact.component';
+import { EmployeePersonalComponent } from './employee-personal/employee-personal.component';
 // import { LogInComponent } from './log-in/log-in.component';
 // import { SignupComponent } from './signup/signup.component';
 // import { EmployeeListComponent } from './employee-list/employee-list.component';
@@ -23,7 +25,9 @@ import { EmployeeDetailComponent } from './employee-detail/employee-detail.compo
     NavComponent,
     routingComponents,
     PageNotFoundComponent,
-    EmployeeDetailComponent
+    EmployeeDetailComponent,
+    EmployeeContactComponent,
+    EmployeePersonalComponent
     // LogInComponent,
     // SignupComponent,
     // EmployeeListComponent,

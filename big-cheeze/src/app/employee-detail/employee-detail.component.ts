@@ -52,15 +52,17 @@ export class EmployeeDetailComponent implements OnInit {
     const previousid = this.clientID - 1;
     this.displayEmployeeDetails(previousid);
     this.routerlink.navigate(['/employeeDetail', previousid]);
+    // this.routerlink.navigate([previousid], {relativeTo: this.route});
   }
   goNext() {
     const nextid = this.clientID + 1;
     this.displayEmployeeDetails(nextid);
-    this.routerlink.navigate(['/employeeDetail', nextid]);
+    this.routerlink.navigate(['/employeeDetail' , nextid]);
   }
   gotoEmployeelist() {
     const selectedID = this.clientID ? this.clientID : null;
     this.routerlink.navigate(['/employeelist', { id: selectedID }]);
+    // this.routerlink.navigate(['../', { id: selectedID }], {relativeTo: this.route});
   }
   displayEmployeeDetails(employeeID) {
     this._employeeSrv.getEmployeeDetail().subscribe(
@@ -68,8 +70,14 @@ export class EmployeeDetailComponent implements OnInit {
         this.displayId = employeeID - 1;
         this.employees = response;
         this.employee = this.employees[this.displayId];
-        console.log(this.employee);
+        // console.log(this.employee);
       });
+  }
+  showContact() {
+    this.routerlink.navigate(['contact'], {relativeTo: this.route});
+  }
+  showPersonal() {
+    this.routerlink.navigate(['personal'], {relativeTo: this.route});
   }
 
 }
