@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EmployeeService } from '../employee.service';
-import { ActivatedRoute, Router, ParamMap, Route } from '@angular/router';
+import { ActivatedRoute, ParamMap, } from '@angular/router';
 
 @Component({
   selector: 'app-employee-contact',
@@ -11,7 +11,7 @@ export class EmployeeContactComponent implements OnInit {
   private clientID: any;
   private displayId: any;
   private employees: any;
-  public clientcontact: any;
+  public empcontact: any;
 
   constructor(
     private emp_service: EmployeeService,
@@ -29,7 +29,7 @@ export class EmployeeContactComponent implements OnInit {
       response => {
         this.displayId = employeeID - 1;
         this.employees = response;
-        this.clientcontact = this.employees[this.displayId];
+        this.empcontact = this.employees[this.displayId];
       });
     }
 }

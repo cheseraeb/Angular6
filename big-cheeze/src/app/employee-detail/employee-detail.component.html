@@ -5,11 +5,12 @@
   <li>First Name : {{employee.first_name}}</li>
   <li>Last Name : {{employee.last_name}}</li>
   <li>Email Adress : {{employee.email}}</li>
+  <li>Race : {{employee.race}}</li>
 </ul>
 <div class="employeeInfo">
-    <button (click)="showDetails('contact')">Contact Information</button>
-    <button (click)="showDetails('personal')">Personal Information</button>
-    <button (click)="showDetails('employment')">Employment Information</button>
+    <button (click)="showContact('contact')">Contact Information</button>
+    <button (click)="showPersonal('personal')">Personal Information</button>
+    <button (click)="showEmployment('employment')">Employment Information</button>
 </div>
 <router-outlet></router-outlet>
 <hr>

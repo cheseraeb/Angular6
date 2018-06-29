@@ -10,7 +10,7 @@ interface IEmployee {
   mobile_number: string;
   work_number: string;
   ip_address: string;
-  streed_address: string;
+  street_address: string;
   race: string;
   city: string;
   country: string;

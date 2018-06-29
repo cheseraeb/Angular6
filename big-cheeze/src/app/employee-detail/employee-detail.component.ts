@@ -14,7 +14,10 @@ export class EmployeeDetailComponent implements OnInit {
   initialId;
   public employees = [];
   public employee: any;
-  private buttonShow: boolean;
+  private isContact: boolean;
+  private isPersonal: boolean;
+  private isEmployment: boolean;
+
   errorMsg;
   constructor(private route: ActivatedRoute,
     private _employeeSrv: EmployeeService,
@@ -26,43 +29,28 @@ export class EmployeeDetailComponent implements OnInit {
     this.route.paramMap.subscribe((params: ParamMap) =>
       // tslint:disable-next-line:radix
       this.clientID = parseInt(params.get('id')));
-    // this._employeeSrv.getEmployeeDetail().subscribe(response => {this.employees =
-    //   response as IEmployee[];
-    //   console.log(response);
-    //   }, error => this.errorMsg = <any> error);
-    // console.log(this.employees);
-    // this.employee = this.employees[1];
-    // console.log(this.employee);
-    // this._employeeSrv.getEmployeeDetail().subscribe(
-    //   response => {
-    //     this.employees = response as IEmployee[];
-    //     console.log(this.employees);
-
-    //     const employee = this.employees[0];
-    //     console.log(employee);
-    //   }, error => this.errorMsg = <any> error
-    // );
     this.initialId = this.clientID;
     this.displayEmployeeDetails(this.initialId);
-    this.buttonShow = false;
+    this.initializeBoolean();
   }
   goPrevious() {
     const previousid = this.clientID - 1;
     this.displayEmployeeDetails(previousid);
     this.routerlink.navigate(['/employeeDetail', previousid]);
     // this.routerlink.navigate([previousid], {relativeTo: this.route});
-    this.buttonShow = false;
+    this.initializeBoolean();
   }
   goNext() {
     const nextid = this.clientID + 1;
     this.displayEmployeeDetails(nextid);
-    this.routerlink.navigate(['/employeeDetail' , nextid]);
-    this.buttonShow = false;
+    this.routerlink.navigate(['/employeeDetail', nextid]);
+    this.initializeBoolean();
   }
   gotoEmployeelist() {
     const selectedID = this.clientID ? this.clientID : null;
     this.routerlink.navigate(['/employeelist', { id: selectedID }]);
     // this.routerlink.navigate(['../', { id: selectedID }], {relativeTo: this.route});
+    this.initializeBoolean();
   }
   displayEmployeeDetails(employeeID) {
     this._employeeSrv.getEmployeeDetail().subscribe(
@@ -72,13 +60,49 @@ export class EmployeeDetailComponent implements OnInit {
         this.employee = this.employees[this.displayId];
       });
   }
-  showDetails(directory_route) {
-    if (!this.buttonShow) {
-      this.routerlink.navigate([directory_route, {id: this.clientID}], {relativeTo: this.route});
-      this.buttonShow = true;
-    } else {
-      this.routerlink.navigate(['../', this.clientID], {relativeTo: this.route});
-      this.buttonShow = false;
+  showContact(route) {
+    if (this.isContact) {
+      this.openDetailpanelOrClose(false, '');
+      this.isContact = false;
+      return;
     }
+    this.isEmployment = false;
+    this.isPersonal = false;
+    this.isContact = true;
+    this.openDetailpanelOrClose(true, route);
+  }
+  showPersonal(route) {
+    if (this.isPersonal) {
+      this.openDetailpanelOrClose(false, '');
+      this.isPersonal = false;
+      return;
+    }
+    this.isEmployment = false;
+    this.isPersonal = true;
+    this.isContact = false;
+    this.openDetailpanelOrClose(true, route);
+  }
+  showEmployment(route) {
+    if (this.isEmployment) {
+      this.openDetailpanelOrClose(false, '');
+      this.isEmployment = false;
+      return;
+    }
+    this.isEmployment = true;
+    this.isPersonal = false;
+    this.isContact = false;
+    this.openDetailpanelOrClose(true, route);
+  }
+  openDetailpanelOrClose(open, directory) {
+    if (open) {
+      this.routerlink.navigate([directory, { id: this.clientID }], { relativeTo: this.route });
+    } else {
+      this.routerlink.navigate(['../', this.clientID], { relativeTo: this.route });
+    }
+  }
+  initializeBoolean() {
+    this.isContact = false;
+    this.isPersonal = false;
+    this.isEmployment = false;
   }
 }

@@ -22,5 +22,9 @@ button:active{
   background-color: orangered;
 }
 h1{
+  padding-left: 5px;
   text-decoration-line: underline;
+}
+li{
+  list-style-type: none;
 }

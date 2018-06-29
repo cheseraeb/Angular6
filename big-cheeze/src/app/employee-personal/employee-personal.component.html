@@ -1,3 +1,13 @@
-<p>
-  employee-personal works!
-</p>
+<h2>Home Address</h2>
+<ul class="Address">
+  <li>{{emppersonal.street_address}}</li>
+  <li>{{emppersonal.city}}</li>
+  <li>{{emppersonal.country}}</li>
+  <li [style.color]="found">{{emppersonal.postal_code}}</li>
+</ul>
+<h2>Account Information</h2>
+<ul>
+  <li>Credit Card: {{emppersonal.credit_card}}</li>
+  <li>Account Number: {{emppersonal.account_number}}</li>
+</ul>
+
